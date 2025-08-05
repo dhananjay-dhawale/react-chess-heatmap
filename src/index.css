@@ -1,0 +1,35 @@
+@import 'react-calendar-heatmap/dist/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Override the default calendar styles */
+.react-calendar-heatmap text {
+  @apply text-white; /* Make all the labels white */
+  font-size: 8px; /* Adjust font size to prevent overlap */
+}
+
+/* Custom styles for the heatmap squares (rects) */
+.react-calendar-heatmap .color-empty {
+  @apply fill-gray-800; /* Use fill instead of background-color */
+  @apply hover:stroke-gray-300; /* Add a hover effect */
+  @apply hover:stroke-1; /* Add a stroke on hover */
+}
+
+.react-calendar-heatmap .bg-green-200 {
+  @apply fill-green-200;
+}
+
+.react-calendar-heatmap .bg-green-300 {
+  @apply fill-green-300;
+}
+
+.react-calendar-heatmap .bg-green-400 {
+  @apply fill-green-400;
+}
+
+.react-calendar-heatmap .bg-green-500 {
+  @apply fill-green-500;
+}
