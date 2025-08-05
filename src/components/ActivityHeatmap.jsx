@@ -20,33 +20,33 @@ const classForValue = (value) => {
   if (!value || value.count === 0) {
     return 'color-empty';
   }
-  if (value.count > 10) return 'bg-green-500';
-  if (value.count > 7) return 'bg-green-400';
+  if (value.count > 10) return 'bg-green-700';
+  if (value.count > 7) return 'bg-green-500';
   if (value.count > 4) return 'bg-green-300';
-  return 'bg-green-200';
+  return 'bg-green-100';
 };
   return (
-    <div className="p-8 bg-gray-900 text-white min-h-screen">
-      <h1 className="text-3xl font-bold mb-8">Activity Heatmap</h1>
-      <div className="overflow-x-auto">
-        <CalendarHeatmap
-          startDate={startDate}
-          endDate={endDate}
-          values={data}
-          classForValue={classForValue}
-          // The titleForValue prop is perfect for tooltips
-          titleForValue={(value) =>
-            value
-              ? `${value.date} - ${value.count} activities`
-              : 'No activity'
-          }
-          gutterSize={2}
-          showWeekdayLabels={true}
-          // You can also add `tooltipDataAttrs` for more advanced tooltips
-        />
-      </div>
+  // Change bg-gray-900 to bg-black
+  <div className="p-8 bg-black text-white min-h-screen">
+    <h1 className="text-3xl font-bold mb-8">Activity Heatmap</h1>
+    <div className="overflow-x-auto">
+      {/* Remove the fixed width div that caused the shrinking */}
+      <CalendarHeatmap
+        startDate={startDate}
+        endDate={endDate}
+        values={data}
+        classForValue={classForValue}
+        titleForValue={(value) =>
+          value
+            ? `${value.date} - ${value.count} activities`
+            : 'No activity'
+        }
+        gutterSize={2}
+        showWeekdayLabels={true}
+      />
     </div>
-  );
+  </div>
+);
 };
 
 export default ActivityHeatmap;
